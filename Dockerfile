@@ -59,7 +59,7 @@ RUN echo "" && \
     git clone --depth 1 http://github.com/bokeh/bokeh.git && \
     mv bokeh/examples bokeh_examples && \
     rm -rf bokeh && \
-    http://github.com/dmadeka/PyDataNYC2017 PyDataExamples && \
+    git clone http://github.com/dmadeka/PyDataNYC2017 PyDataExamples && \
     svn export https://github.com/bloomberg/bqplot/trunk/examples bqplot_examples
 
 # Make Jupyter .ipynb notebooks from .py files
