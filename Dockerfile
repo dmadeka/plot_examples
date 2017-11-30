@@ -54,12 +54,8 @@ RUN echo "" && \
     echo "c.NotebookApp.token = u''" > jupyter_notebook_config.py
 
 # Copy examples from:
-# https://github.com/bokeh/bokeh
 # https://github.com/bloomberg/bqplot
 RUN echo "" && \
-    git clone --depth 1 http://github.com/bokeh/bokeh.git && \
-    mv bokeh/examples bokeh_examples && \
-    rm -rf bokeh && \
     git clone http://github.com/dmadeka/PyDataNYC2017 PyDataExamples && \
     svn export https://github.com/bloomberg/bqplot/trunk/examples bqplot_examples
 
