@@ -59,19 +59,6 @@ RUN echo "" && \
     git clone http://github.com/dmadeka/PyDataNYC2017 PyDataExamples && \
     svn export https://github.com/bloomberg/bqplot/trunk/examples bqplot_examples
 
-# Make Jupyter .ipynb notebooks from .py files
-RUN rm -rf > py_f.txt && \
-    find . -type f -name '*.py'|while read fname; do echo "${fname%.*}" >> py_f.txt; done && \
-    echo "from py2nb.tools import python_to_notebook; import os.path; import os" > py_f.py && \
-    echo "f = open('py_f.txt','r'); li = f.readlines()" >> py_f.py && \
-    echo "cdw=os.getcwd()" >> py_f.py && \
-    echo "for l in li:" >> py_f.py && \
-    echo "    p,f=os.path.split(l.strip())" >> py_f.py && \
-    echo "    os.chdir(cdw+os.sep+p)" >> py_f.py && \
-    echo "    print(p, f+'.py', f+'.ipynb')" >> py_f.py && \
-    echo "    python_to_notebook(f+'.py', f+'.ipynb')" >> py_f.py && \
-    python py_f.py
-
 # Possible sign Notebooks
 #RUN find . -type f -name '*.ipynb'|while read fname; do echo $fname; jupyter trust "$fname"; done
 
