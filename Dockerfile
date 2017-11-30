@@ -43,6 +43,7 @@ ENV PIP_PACKAGES="$PIP_PACKAGES https://github.com/sklam/py2nb/archive/master.zi
 RUN echo "" && \
     conda install -c conda-forge $CONDA_PACKAGES && \
     pip install $PIP_PACKAGES && \
+    conda install -c conda-forge pythreejs && \
     pip install mne && \
     pip install mxnet && \
     pip install tensorflow && \
