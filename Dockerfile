@@ -43,9 +43,8 @@ ENV PIP_PACKAGES="$PIP_PACKAGES https://github.com/sklam/py2nb/archive/master.zi
 RUN echo "" && \
     conda install -c conda-forge $CONDA_PACKAGES && \
     pip install $PIP_PACKAGES && \
-    conda install -c damianavila82 rise && \
-    conda install -c bokeh datashader && \
-    conda install -c ioam holoviews
+    pip install mxnet && \
+    pip install keras && \
 
 # jupyter notebook password remove
 RUN echo "" && \
@@ -60,7 +59,7 @@ RUN echo "" && \
     git clone --depth 1 http://github.com/bokeh/bokeh.git && \
     mv bokeh/examples bokeh_examples && \
     rm -rf bokeh && \
-    https://github.com/dmadeka/PyDataNYC2017 PyDataExamples && \
+    http://github.com/dmadeka/PyDataNYC2017 PyDataExamples && \
     svn export https://github.com/bloomberg/bqplot/trunk/examples bqplot_examples
 
 # Make Jupyter .ipynb notebooks from .py files
