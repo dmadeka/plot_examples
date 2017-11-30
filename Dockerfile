@@ -44,7 +44,7 @@ RUN echo "" && \
     conda install -c conda-forge $CONDA_PACKAGES && \
     pip install $PIP_PACKAGES && \
     pip install mxnet && \
-    pip install keras && \
+    pip install keras
 
 # jupyter notebook password remove
 RUN echo "" && \
