@@ -75,9 +75,6 @@ RUN rm -rf > py_f.txt && \
     echo "    python_to_notebook(f+'.py', f+'.ipynb')" >> py_f.py && \
     python py_f.py
 
-# Get sample data
-RUN python -c "import bokeh; bokeh.sampledata.download()"
-
 # Possible sign Notebooks
 #RUN find . -type f -name '*.ipynb'|while read fname; do echo $fname; jupyter trust "$fname"; done
 
